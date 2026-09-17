@@ -1,0 +1,44 @@
+{
+  "name": "indonesian-writing-skills",
+  "version": "1.0.0",
+  "description": "Dua Agent Skill bahasa Indonesia: satu untuk tulisan yang enak dibaca manusia, satu untuk teks yang tidak bisa salah dibaca mesin.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "indonesian-writing-skills": "bin/cli.mjs"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "assets/",
+    "README.md",
+    "LICENSE",
+    "ATTRIBUTION.md"
+  ],
+  "scripts": {
+    "test": "node --test bin/cli.test.mjs skills/indonesian-writing/scripts/check.test.mjs skills/bahasa-teknis-terkendali/scripts/lint.test.mjs"
+  },
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "command-code",
+    "skill",
+    "bahasa-indonesia",
+    "indonesian",
+    "writing",
+    "eyd",
+    "anti-slop",
+    "controlled-language"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pataanggs/indonesian-writing-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pataanggs/indonesian-writing-skill/issues"
+  },
+  "homepage": "https://github.com/pataanggs/indonesian-writing-skill#readme"
+}

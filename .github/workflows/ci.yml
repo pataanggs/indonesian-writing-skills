@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Uji seluruh paket
+        run: npm test
+
+      - name: Pastikan fixture berperilaku benar
+        run: |
+          node skills/indonesian-writing/scripts/check.mjs skills/indonesian-writing/scripts/fixtures/bersih.md
+          if node skills/indonesian-writing/scripts/check.mjs skills/indonesian-writing/scripts/fixtures/slop.md > /dev/null; then
+            echo "Draf slop seharusnya menghasilkan error" >&2
+            exit 1
+          fi
+
+          node skills/bahasa-teknis-terkendali/scripts/lint.mjs skills/bahasa-teknis-terkendali/scripts/fixtures/bersih.md
+          if node skills/bahasa-teknis-terkendali/scripts/lint.mjs skills/bahasa-teknis-terkendali/scripts/fixtures/melanggar.md > /dev/null; then
+            echo "Fixture melanggar seharusnya menghasilkan temuan keras" >&2
+            exit 1
+          fi
+
+      - name: Pastikan paket bisa dipasang
+        run: |
+          node bin/cli.mjs list
+          node bin/cli.mjs install --target "$RUNNER_TEMP/skills-coba"
+          test -f "$RUNNER_TEMP/skills-coba/indonesian-writing/SKILL.md"
+          test -f "$RUNNER_TEMP/skills-coba/bahasa-teknis-terkendali/SKILL.md"
