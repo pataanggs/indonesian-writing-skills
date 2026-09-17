@@ -4,6 +4,8 @@
 
 # Indonesian Writing Skills
 
+**Bahasa Indonesia | [English](README.en.md)**
+
 Dua Agent Skill bahasa Indonesia. Satu untuk tulisan yang dibaca manusia, satu untuk teks yang
 dibaca mesin.
 

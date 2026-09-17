@@ -4,7 +4,7 @@
  *
  * Menyalin folder di dalam `skills/` ke direktori skill agen. Tanpa dependensi.
  *
- *   npx github:pataanggs/indonesian-writing-skill
+ *   npx github:pataanggs/indonesian-writing-skills
  *   npx indonesian-writing-skills install --local
  *   npx indonesian-writing-skills list
  *

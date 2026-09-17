@@ -35,10 +35,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pataanggs/indonesian-writing-skill.git"
+    "url": "git+https://github.com/pataanggs/indonesian-writing-skills.git"
   },
   "bugs": {
-    "url": "https://github.com/pataanggs/indonesian-writing-skill/issues"
+    "url": "https://github.com/pataanggs/indonesian-writing-skills/issues"
   },
-  "homepage": "https://github.com/pataanggs/indonesian-writing-skill#readme"
+  "homepage": "https://github.com/pataanggs/indonesian-writing-skills#readme"
 }
